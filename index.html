@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090511">
+
 <title>For Adlina, With All My Love ♡</title>
 
 <style>
@@ -15,7 +16,9 @@
   --white: #fffafc;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
@@ -48,11 +51,16 @@ canvas {
   display: block;
 }
 
-#matrixCanvas { z-index: 0; }
+#matrixCanvas {
+  z-index: 0;
+}
+
 #particleCanvas {
   z-index: 2;
   pointer-events: none;
 }
+
+/* BACKGROUND */
 
 .ambient {
   position: fixed;
@@ -60,15 +68,23 @@ canvas {
   inset: -25%;
   pointer-events: none;
   background:
-    radial-gradient(circle at 28% 42%,
-      rgba(108,16,67,.17), transparent 34%),
-    radial-gradient(circle at 78% 72%,
-      rgba(176,20,99,.11), transparent 36%);
+    radial-gradient(
+      circle at 28% 42%,
+      rgba(108,16,67,.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 78% 72%,
+      rgba(176,20,99,.11),
+      transparent 36%
+    );
   animation: ambient 12s ease-in-out infinite alternate;
 }
 
 @keyframes ambient {
-  to { transform: translate(3%,-2%) scale(1.08); }
+  to {
+    transform: translate(3%,-2%) scale(1.08);
+  }
 }
 
 .vignette {
@@ -84,6 +100,8 @@ canvas {
   );
 }
 
+/* TOP LABEL */
+
 .topline {
   position: fixed;
   z-index: 6;
@@ -97,7 +115,11 @@ canvas {
   transition: opacity .9s;
 }
 
-.topline.show { opacity: .8; }
+.topline.show {
+  opacity: .8;
+}
+
+/* MUSIC BUTTON */
 
 .music {
   position: fixed;
@@ -111,11 +133,14 @@ canvas {
   font-size: 12px;
   border-radius: 30px;
   backdrop-filter: blur(12px);
+  transition: background .3s;
 }
 
-.music:hover { background: #6a254994; }
+.music:hover {
+  background: #6a254994;
+}
 
-/* INTRO */
+/* INTRO SCREEN */
 
 .intro {
   position: fixed;
@@ -185,12 +210,18 @@ canvas {
 }
 
 @keyframes float {
-  50% { transform: translateY(-9px); }
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
 @keyframes heartbeat {
-  0%,100% { transform: scale(1); }
-  45% { transform: scale(1.12); }
+  0%,100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.12);
+  }
 }
 
 .eyebrow {
@@ -206,7 +237,10 @@ canvas {
   letter-spacing: -.055em;
   margin: 0 auto 18px;
   background: linear-gradient(
-    130deg,#fff9fb 20%,#ff9ccf 75%,#ffe5f1
+    130deg,
+    #fff9fb 20%,
+    #ff9ccf 75%,
+    #ffe5f1
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -226,7 +260,11 @@ canvas {
   justify-content: center;
   gap: 10px;
   border: 1px solid #ffafdc;
-  background: linear-gradient(115deg,#ff77b8,#ed4b9f);
+  background: linear-gradient(
+    115deg,
+    #ff77b8,
+    #ed4b9f
+  );
   color: #250818;
   padding: 16px 27px;
   border-radius: 100px;
@@ -248,7 +286,7 @@ canvas {
   color: #ffe4f38c;
 }
 
-/* PARTICLE ANIMATION CAPTION */
+/* ANIMATION CAPTION */
 
 .scene-caption {
   position: fixed;
@@ -265,9 +303,11 @@ canvas {
   pointer-events: none;
 }
 
-.scene-caption.show { opacity: 1; }
+.scene-caption.show {
+  opacity: 1;
+}
 
-/* FINAL HEART MESSAGE */
+/* FINAL HEART TEXT */
 
 .final-center {
   position: fixed;
@@ -279,7 +319,7 @@ canvas {
   opacity: 0;
   text-align: center;
   pointer-events: none;
-  transition: opacity 1.5s,transform 1.5s;
+  transition: opacity 1.5s, transform 1.5s;
 }
 
 .final-center.show {
@@ -306,7 +346,7 @@ canvas {
     0 0 34px #ff4da46e;
 }
 
-/* SUBTITLE BELOW HEART */
+/* SUBTITLE BELOW THE HEART */
 
 .final-subtitle {
   position: fixed;
@@ -370,9 +410,11 @@ canvas {
   backdrop-filter: blur(12px);
 }
 
-.button-ghost:hover { background: #7f295790; }
+.button-ghost:hover {
+  background: #7f295790;
+}
 
-/* LOVE LETTER */
+/* LOVE LETTER MODAL */
 
 .letter-modal {
   position: fixed;
@@ -401,7 +443,10 @@ canvas {
   border-radius: 18px;
   color: #5a2541;
   background: linear-gradient(
-    160deg,#fffaf9,#fff3f7 68%,#ffe7ee
+    160deg,
+    #fffaf9,
+    #fff3f7 68%,
+    #ffe7ee
   );
   box-shadow:
     0 25px 100px #ff389c29,
@@ -419,7 +464,10 @@ canvas {
   display: block;
   height: 8px;
   background: linear-gradient(
-    90deg,#f38cb4,#ffd8e8,#f38cb4
+    90deg,
+    #f38cb4,
+    #ffd8e8,
+    #f38cb4
   );
 }
 
@@ -511,6 +559,8 @@ canvas {
   margin: 12px 13px -45px 0;
 }
 
+/* FLOATING HEARTS */
+
 .floating-hearts {
   position: fixed;
   z-index: 26;
@@ -533,8 +583,12 @@ canvas {
     transform: translateY(0) rotate(-18deg) scale(.6);
     opacity: 0;
   }
-  12% { opacity: .85; }
-  80% { opacity: .75; }
+  12% {
+    opacity: .85;
+  }
+  80% {
+    opacity: .75;
+  }
   100% {
     transform: translateY(-120vh) rotate(25deg) scale(1.3);
     opacity: 0;
@@ -557,13 +611,17 @@ canvas {
     margin-bottom: 26px;
   }
 
-  .intro-heart { font-size: 65px; }
+  .intro-heart {
+    font-size: 65px;
+  }
 
   .intro h1 {
     font-size: clamp(38px,11vw,58px);
   }
 
-  .final-center { width: 78%; }
+  .final-center {
+    width: 78%;
+  }
 
   .final-actions {
     flex-wrap: wrap;
@@ -574,9 +632,17 @@ canvas {
     flex: 1 1 auto;
   }
 
-  .letter-wrap { max-height: 90dvh; }
-  .letter-paper { padding: 30px 25px; }
-  .letter-body { font-size: 15px; }
+  .letter-wrap {
+    max-height: 90dvh;
+  }
+
+  .letter-paper {
+    padding: 30px 25px;
+  }
+
+  .letter-body {
+    font-size: 15px;
+  }
 }
 
 @media(max-height:600px) {
@@ -585,13 +651,24 @@ canvas {
     height: 90px;
     margin-bottom: 15px;
   }
-  .intro-heart { font-size: 50px; }
-  .intro h1 { font-size: 38px; }
-  .note { margin-bottom: 15px; }
+
+  .intro-heart {
+    font-size: 50px;
+  }
+
+  .intro h1 {
+    font-size: 38px;
+  }
+
+  .note {
+    margin-bottom: 15px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  .ambient,.intro-heart,.intro-orbit {
+  .ambient,
+  .intro-heart,
+  .intro-orbit {
     animation: none;
   }
 }
@@ -600,21 +677,38 @@ canvas {
 
 <body>
 
+<!-- BACKGROUND -->
+
 <canvas id="matrixCanvas"></canvas>
 <div class="ambient"></div>
 <canvas id="particleCanvas"></canvas>
 <div class="vignette"></div>
 
+<!-- TOP LABEL -->
+
 <div class="topline" id="topline">
-  TO <span data-name></span> · FROM <span data-from></span>
+  TO <span data-name></span>
+  · FROM <span data-from></span>
 </div>
 
-<button class="music" id="musicButton"
-  type="button" aria-pressed="false">
+<!-- MUSIC -->
+
+<button
+  class="music"
+  id="musicButton"
+  type="button"
+  aria-pressed="false">
   ♫ Music: Off
 </button>
 
-<!-- INTRO SCREEN -->
+<audio
+  id="loveSong"
+  src="bukti.mp3"
+  preload="auto"
+  loop>
+</audio>
+
+<!-- INTRO -->
 
 <section class="intro" id="intro">
   <div class="intro-inner">
@@ -623,7 +717,9 @@ canvas {
       <div class="intro-heart">♥</div>
     </div>
 
-    <p class="eyebrow">A little piece of my heart</p>
+    <p class="eyebrow">
+      A little piece of my heart
+    </p>
 
     <h1>
       Hi, <span data-name></span>.<br>
@@ -650,10 +746,12 @@ canvas {
 
 <div class="scene-caption" id="sceneCaption"></div>
 
-<!-- FINAL LOVE MESSAGE -->
+<!-- FINAL HEART MESSAGE -->
 
 <div class="final-center" id="finalCenter">
-  <span class="small">I am so lucky to have you</span>
+  <span class="small">
+    I am so lucky to have you
+  </span>
 
   <span class="big">
     I love you,<br>
@@ -661,7 +759,7 @@ canvas {
   </span>
 </div>
 
-<!-- TEXT BELOW HEART -->
+<!-- SUBTITLE BELOW HEART -->
 
 <div class="final-subtitle" id="finalSubtitle">
   more than these little words can say
@@ -670,6 +768,7 @@ canvas {
 <!-- FINAL BUTTONS -->
 
 <div class="final-actions" id="finalActions">
+
   <button class="button-primary" id="openLetter">
     Open Your Love Letter 💌
   </button>
@@ -677,18 +776,27 @@ canvas {
   <button class="button-ghost" id="replayButton">
     ↻ Replay
   </button>
+
 </div>
 
-<!-- LOVE LETTER MODAL -->
+<!-- LOVE LETTER -->
 
-<div class="letter-modal" id="letterModal"
-  role="dialog" aria-modal="true"
-  aria-labelledby="letterTitle" aria-hidden="true">
+<div
+  class="letter-modal"
+  id="letterModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="letterTitle"
+  aria-hidden="true">
 
   <div class="letter-wrap" id="letterWrap">
 
-    <button class="close-letter" id="closeLetter"
-      aria-label="Close letter">×</button>
+    <button
+      class="close-letter"
+      id="closeLetter"
+      aria-label="Close letter">
+      ×
+    </button>
 
     <div class="letter-paper">
 
@@ -714,13 +822,19 @@ canvas {
       </p>
 
       <div class="letter-controls">
-        <button class="button-primary" id="copyLetter">
+
+        <button
+          class="button-primary"
+          id="copyLetter">
           ♡ Copy this letter
         </button>
 
-        <button class="button-ghost" id="closeLetterBottom">
+        <button
+          class="button-ghost"
+          id="closeLetterBottom">
           Close Letter
         </button>
+
       </div>
 
     </div>
@@ -775,32 +889,91 @@ CONFIG.letter.forEach(line => {
 const matrixCanvas = document.getElementById("matrixCanvas");
 const particleCanvas = document.getElementById("particleCanvas");
 
-const matrix = matrixCanvas.getContext("2d", {alpha:false});
+const matrix = matrixCanvas.getContext("2d", {
+  alpha: false
+});
+
 const ctx = particleCanvas.getContext("2d");
 
 const intro = document.getElementById("intro");
 const topline = document.getElementById("topline");
 const caption = document.getElementById("sceneCaption");
+
 const finalCenter = document.getElementById("finalCenter");
 const finalSubtitle = document.getElementById("finalSubtitle");
 const finalActions = document.getElementById("finalActions");
+
 const letterModal = document.getElementById("letterModal");
 const letterWrap = document.getElementById("letterWrap");
 const openLetterButton = document.getElementById("openLetter");
-const musicButton = document.getElementById("musicButton");
 
 const random = (a,b) => a + Math.random() * (b-a);
 const clamp = (n,a,b) => Math.max(a,Math.min(b,n));
 
 const reducedMotion =
-  window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-let W=0,H=0,dpr=1;
-let rain=[],stars=[],particles=[];
-let active=false,heartMode=false;
-let currentScene=-1;
-let startTime=0;
-let lastTime=performance.now();
+let W = 0;
+let H = 0;
+let dpr = 1;
+
+let rain = [];
+let stars = [];
+let particles = [];
+
+let active = false;
+let heartMode = false;
+let currentScene = -1;
+
+let startTime = 0;
+let lastTime = performance.now();
+
+/* ==========================================
+   MUSIC - VIRGOUN BUKTI
+   ========================================== */
+
+const loveSong = document.getElementById("loveSong");
+const musicButton = document.getElementById("musicButton");
+
+loveSong.volume = 0.65;
+loveSong.loop = true;
+
+function updateMusicButton() {
+  const playing = !loveSong.paused;
+
+  musicButton.textContent = playing
+    ? "♫ Music: On"
+    : "♫ Music: Off";
+
+  musicButton.setAttribute(
+    "aria-pressed",
+    String(playing)
+  );
+}
+
+function playLoveSong() {
+  if (!loveSong.paused) return;
+
+  const attempt = loveSong.play();
+
+  if (attempt && typeof attempt.catch === "function") {
+    attempt.catch(error => {
+      console.log("Music playback:", error.message);
+      updateMusicButton();
+    });
+  }
+}
+
+musicButton.addEventListener("click", () => {
+  if (loveSong.paused) {
+    playLoveSong();
+  } else {
+    loveSong.pause();
+  }
+});
+
+loveSong.addEventListener("play", updateMusicButton);
+loveSong.addEventListener("pause", updateMusicButton);
 
 /* ==========================================
    ANIMATION SCENES
@@ -808,36 +981,52 @@ let lastTime=performance.now();
 
 const scenes = [
   {
-    at:0.7, type:"text", value:"3",
-    caption:"For someone who means the world to me..."
+    at: 0.7,
+    type: "text",
+    value: "3",
+    caption: "For someone who means the world to me..."
   },
   {
-    at:2.2, type:"text", value:"2",
-    caption:"I have a little secret..."
+    at: 2.2,
+    type: "text",
+    value: "2",
+    caption: "I have a little secret..."
   },
   {
-    at:3.7, type:"text", value:"1",
-    caption:"And it is all about you ♡"
+    at: 3.7,
+    type: "text",
+    value: "1",
+    caption: "And it is all about you ♡"
   },
   {
-    at:5.5, type:"text", value:CONFIG.words[0],
-    caption:"Out of everyone..."
+    at: 5.5,
+    type: "text",
+    value: CONFIG.words[0],
+    caption: "Out of everyone..."
   },
   {
-    at:8.1, type:"text", value:CONFIG.words[1],
-    caption:"You became my favourite person."
+    at: 8.1,
+    type: "text",
+    value: CONFIG.words[1],
+    caption: "You became my favourite person."
   },
   {
-    at:10.7, type:"text", value:CONFIG.words[2],
-    caption:"My favourite hello, my sweetest thought..."
+    at: 10.7,
+    type: "text",
+    value: CONFIG.words[2],
+    caption: "My favourite hello, my sweetest thought..."
   },
   {
-    at:13.3, type:"text", value:CONFIG.words[3],
-    caption:"And the reason behind my smile."
+    at: 13.3,
+    type: "text",
+    value: CONFIG.words[3],
+    caption: "And the reason behind my smile."
   },
   {
-    at:16.5, type:"heart", value:"",
-    caption:""
+    at: 16.5,
+    type: "heart",
+    value: "",
+    caption: ""
   }
 ];
 
@@ -846,59 +1035,65 @@ const scenes = [
    ========================================== */
 
 function fitScreen() {
-  const oldW=W, oldH=H;
+  const oldW = W;
+  const oldH = H;
 
-  W=window.innerWidth;
-  H=window.innerHeight;
-  dpr=Math.min(window.devicePixelRatio||1,2);
+  W = window.innerWidth;
+  H = window.innerHeight;
 
-  for(const canvas of [matrixCanvas,particleCanvas]) {
-    canvas.width=Math.round(W*dpr);
-    canvas.height=Math.round(H*dpr);
-    canvas.style.width=W+"px";
-    canvas.style.height=H+"px";
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  for (const canvas of [matrixCanvas,particleCanvas]) {
+    canvas.width = Math.round(W*dpr);
+    canvas.height = Math.round(H*dpr);
+
+    canvas.style.width = W+"px";
+    canvas.style.height = H+"px";
   }
 
   matrix.setTransform(dpr,0,0,dpr,0,0);
   ctx.setTransform(dpr,0,0,dpr,0,0);
 
-  matrix.fillStyle="#090511";
+  matrix.fillStyle = "#090511";
   matrix.fillRect(0,0,W,H);
 
-  const heartWidth=Math.min(W*.77,H*.55,440);
+  const heartWidth = Math.min(W*.77,H*.55,440);
 
   document.documentElement.style.setProperty(
     "--below-heart",
-    Math.round(H*.46+15*heartWidth/32+20)+"px"
+    Math.round(H*.46 + 15*heartWidth/32 + 20)+"px"
   );
 
-  rain=Array.from({
-    length:Math.min(110,Math.max(27,Math.round(W/18)))
-  },()=>({
-    x:random(0,W),
-    y:random(-H,H),
-    speed:random(.5,1.8),
-    size:random(9,13),
-    length:Math.floor(random(7,21)),
-    alpha:random(.10,.48),
-    phase:random(0,100)
+  rain = Array.from({
+    length: Math.min(110,Math.max(27,Math.round(W/18)))
+  }, () => ({
+    x: random(0,W),
+    y: random(-H,H),
+    speed: random(.5,1.8),
+    size: random(9,13),
+    length: Math.floor(random(7,21)),
+    alpha: random(.10,.48),
+    phase: random(0,100)
   }));
 
-  stars=Array.from({
-    length:Math.min(100,Math.round(W*H/10500))
-  },()=>({
-    x:random(0,W),
-    y:random(0,H),
-    alpha:random(.08,.47),
-    radius:random(.35,1.25),
-    phase:random(0,6.28)
+  stars = Array.from({
+    length: Math.min(100,Math.round(W*H/10500))
+  }, () => ({
+    x: random(0,W),
+    y: random(0,H),
+    alpha: random(.08,.47),
+    radius: random(.35,1.25),
+    phase: random(0,6.28)
   }));
 
-  if(oldW && oldH && active && currentScene>=0) {
-    const s=scenes[currentScene];
+  if (oldW && oldH && active && currentScene >= 0) {
+    const s = scenes[currentScene];
+
     morphTo(
-      s.type==="heart" ? makeHeart() : makeText(s.value),
-      s.type==="heart"
+      s.type === "heart"
+        ? makeHeart()
+        : makeText(s.value),
+      s.type === "heart"
     );
   }
 }
@@ -908,54 +1103,54 @@ function fitScreen() {
    ========================================== */
 
 function drawMatrix(now,dt) {
-  matrix.fillStyle="rgba(9,5,17,.21)";
+  matrix.fillStyle = "rgba(9,5,17,.21)";
   matrix.fillRect(0,0,W,H);
 
-  const chars="01·:+♥";
-  matrix.textBaseline="middle";
+  const chars = "01·:+♥";
+  matrix.textBaseline = "middle";
 
-  for(const drop of rain) {
-    matrix.font="bold "+drop.size+"px monospace";
+  for (const drop of rain) {
+    matrix.font = "bold "+drop.size+"px monospace";
 
-    for(let i=0;i<drop.length;i++) {
-      const y=drop.y-i*drop.size*1.35;
+    for (let i=0; i<drop.length; i++) {
+      const y = drop.y-i*drop.size*1.35;
 
-      if(y < -15 || y > H+15) continue;
+      if (y < -15 || y > H+15) continue;
 
-      const a=drop.alpha*(1-i/drop.length);
+      const a = drop.alpha*(1-i/drop.length);
 
-      matrix.fillStyle=
+      matrix.fillStyle =
         "rgba(255,"+
-        (i===0?136:59)+","+
-        (i===0?189:140)+","+
+        (i===0 ? 136 : 59)+","+
+        (i===0 ? 189 : 140)+","+
         a+")";
 
-      const charIndex=
+      const charIndex =
         Math.floor(now*.013+drop.phase+i*13)%chars.length;
 
       matrix.fillText(chars[charIndex],drop.x,y);
     }
 
-    drop.y+=drop.speed*dt*2;
+    drop.y += drop.speed*dt*2;
 
-    if(drop.y-drop.length*drop.size>H) {
-      drop.y=random(-H*.3,-10);
-      drop.x=random(0,W);
-      drop.alpha=random(.1,.48);
+    if (drop.y-drop.length*drop.size > H) {
+      drop.y = random(-H*.3,-10);
+      drop.x = random(0,W);
+      drop.alpha = random(.1,.48);
     }
   }
 
-  for(const s of stars) {
-    matrix.globalAlpha=
+  for (const s of stars) {
+    matrix.globalAlpha =
       s.alpha*(.7+.3*Math.sin(now*.0015+s.phase));
 
-    matrix.fillStyle="#ffb9e1";
+    matrix.fillStyle = "#ffb9e1";
     matrix.beginPath();
     matrix.arc(s.x,s.y,s.radius,0,Math.PI*2);
     matrix.fill();
   }
 
-  matrix.globalAlpha=1;
+  matrix.globalAlpha = 1;
 }
 
 /* ==========================================
@@ -963,57 +1158,66 @@ function drawMatrix(now,dt) {
    ========================================== */
 
 function shuffle(points) {
-  for(let i=points.length-1;i>0;i--) {
-    const j=Math.floor(Math.random()*(i+1));
-    [points[i],points[j]]=[points[j],points[i]];
+  for (let i=points.length-1; i>0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [points[i],points[j]] = [points[j],points[i]];
   }
+
   return points;
 }
 
 function makeText(text) {
-  const off=document.createElement("canvas");
-  off.width=Math.round(W);
-  off.height=Math.round(H);
+  const off = document.createElement("canvas");
 
-  const t=off.getContext("2d",{willReadFrequently:true});
+  off.width = Math.round(W);
+  off.height = Math.round(H);
 
-  let size=Math.max(34,Math.min(190,H*.27,W*.33));
+  const t = off.getContext("2d", {
+    willReadFrequently: true
+  });
 
-  t.textAlign="center";
-  t.textBaseline="middle";
+  let size = Math.max(34,Math.min(190,H*.27,W*.33));
 
-  while(size>29) {
-    t.font="900 "+size+"px Arial,sans-serif";
-    if(t.measureText(text).width<W*.78) break;
-    size-=3;
+  t.textAlign = "center";
+  t.textBaseline = "middle";
+
+  while (size > 29) {
+    t.font = "900 "+size+"px Arial,sans-serif";
+
+    if (t.measureText(text).width < W*.78) break;
+
+    size -= 3;
   }
 
-  t.fillStyle="#fff";
+  t.fillStyle = "#fff";
   t.fillText(text,W/2,H*.46);
 
-  const data=t.getImageData(
+  const data = t.getImageData(
     0,0,off.width,off.height
   ).data;
 
-  const step=Math.max(3,Math.round(size/34));
-  const result=[];
+  const step = Math.max(3,Math.round(size/34));
+  const result = [];
 
-  for(
+  for (
     let y=Math.max(0,Math.floor(H*.46-size));
     y<Math.min(H,Math.ceil(H*.46+size));
     y+=step
   ) {
-    for(let x=0;x<W;x+=step) {
-      if(data[(y*off.width+x)*4+3]>150) {
+    for (let x=0; x<W; x+=step) {
+      if (data[(y*off.width+x)*4+3] > 150) {
         result.push({
-          x:x+random(-.7,.7),
-          y:y+random(-.7,.7)
+          x: x+random(-.7,.7),
+          y: y+random(-.7,.7)
         });
       }
     }
   }
 
-  return shuffle(result).slice(0,W<600?950:1550);
+  return shuffle(result).slice(
+    0,
+    W<600 ? 950 : 1550
+  );
 }
 
 /* ==========================================
@@ -1021,17 +1225,18 @@ function makeText(text) {
    ========================================== */
 
 function makeHeart() {
-  const width=Math.min(W*.77,H*.55,440);
-  const scale=width/32;
-  const result=[];
-  const count=W<600?1050:1500;
+  const width = Math.min(W*.77,H*.55,440);
+  const scale = width/32;
 
-  for(let i=0;i<count;i++) {
-    const a=i/count*Math.PI*2;
+  const result = [];
+  const count = W<600 ? 1050 : 1500;
 
-    const x=16*Math.pow(Math.sin(a),3);
+  for (let i=0; i<count; i++) {
+    const a = i/count*Math.PI*2;
 
-    const y=-(
+    const x = 16*Math.pow(Math.sin(a),3);
+
+    const y = -(
       13*Math.cos(a)
       -5*Math.cos(2*a)
       -2*Math.cos(3*a)
@@ -1039,8 +1244,8 @@ function makeHeart() {
     );
 
     result.push({
-      x:W/2+x*scale+random(-3.8,3.8),
-      y:H*.46+(y-2)*scale+random(-3.8,3.8)
+      x: W/2+x*scale+random(-3.8,3.8),
+      y: H*.46+(y-2)*scale+random(-3.8,3.8)
     });
   }
 
@@ -1052,53 +1257,63 @@ function makeHeart() {
    ========================================== */
 
 function morphTo(targets,asHeart) {
-  heartMode=asHeart;
+  heartMode = asHeart;
 
-  const prev=particles.slice();
-  const next=[];
+  const prev = particles.slice();
+  const next = [];
 
-  for(let i=0;i<targets.length;i++) {
-    const p=targets[i];
-    let dot=prev[i];
+  for (let i=0; i<targets.length; i++) {
+    const p = targets[i];
+    let dot = prev[i];
 
-    if(!dot) {
-      const base=prev.length
-        ?prev[Math.floor(random(0,prev.length))]
-        :{x:random(0,W),y:random(0,H)};
+    if (!dot) {
+      const base = prev.length
+        ? prev[Math.floor(random(0,prev.length))]
+        : {
+            x: random(0,W),
+            y: random(0,H)
+          };
 
-      dot={
-        x:base.x+random(-75,75),
-        y:base.y+random(-75,75),
-        vx:random(-9,9),
-        vy:random(-9,9),
-        alpha:0,
-        size:random(1.1,2.3),
-        phase:random(0,6.28)
+      dot = {
+        x: base.x+random(-75,75),
+        y: base.y+random(-75,75),
+        vx: random(-9,9),
+        vy: random(-9,9),
+        alpha: 0,
+        size: random(1.1,2.3),
+        phase: random(0,6.28)
       };
     }
 
-    dot.tx=p.x;
-    dot.ty=p.y;
-    dot.vx+=random(-13,13);
-    dot.vy+=random(-13,13);
-    dot.size=asHeart?random(1.15,2.7):random(1.15,2.4);
+    dot.tx = p.x;
+    dot.ty = p.y;
+
+    dot.vx += random(-13,13);
+    dot.vy += random(-13,13);
+
+    dot.size = asHeart
+      ? random(1.15,2.7)
+      : random(1.15,2.4);
 
     next.push(dot);
   }
 
-  particles=next;
+  particles = next;
 }
 
 function setScene(index) {
-  currentScene=index;
-  const s=scenes[index];
+  currentScene = index;
+
+  const s = scenes[index];
 
   morphTo(
-    s.type==="heart"?makeHeart():makeText(s.value),
-    s.type==="heart"
+    s.type === "heart"
+      ? makeHeart()
+      : makeText(s.value),
+    s.type === "heart"
   );
 
-  caption.textContent=s.caption;
+  caption.textContent = s.caption;
   caption.classList.toggle("show",!!s.caption);
 }
 
@@ -1108,61 +1323,87 @@ function setScene(index) {
 
 function drawParticles(now,dt) {
   ctx.clearRect(0,0,W,H);
-  if(!active)return;
 
-  const pulse=.89+.11*Math.sin(now*.0026);
+  if (!active) return;
 
-  for(let i=0;i<particles.length;i++) {
-    const p=particles[i];
-    const spring=heartMode?.037:.047;
+  const pulse = .89+.11*Math.sin(now*.0026);
 
-    p.vx=(p.vx+(p.tx-p.x)*spring*dt)*Math.pow(.77,dt);
-    p.vy=(p.vy+(p.ty-p.y)*spring*dt)*Math.pow(.77,dt);
+  for (let i=0; i<particles.length; i++) {
+    const p = particles[i];
+    const spring = heartMode ? .037 : .047;
 
-    p.x+=p.vx*dt;
-    p.y+=p.vy*dt;
-    p.alpha=Math.min(1,p.alpha+.055*dt);
+    p.vx =
+      (p.vx+(p.tx-p.x)*spring*dt)*Math.pow(.77,dt);
 
-    ctx.globalAlpha=
-      p.alpha*(.78+.22*Math.sin(now*.004+p.phase))*pulse;
+    p.vy =
+      (p.vy+(p.ty-p.y)*spring*dt)*Math.pow(.77,dt);
 
-    ctx.shadowBlur=i%9===0?11:0;
-    ctx.shadowColor=heartMode?"#ff4ca6":"#fff4e0";
+    p.x += p.vx*dt;
+    p.y += p.vy*dt;
 
-    ctx.fillStyle=heartMode
-      ?(i%8===0?"#ffe0f0":i%3===0?"#ff9ccd":"#ff59ad")
-      :(i%9===0?"#ffffff":"#fffbe6");
+    p.alpha = Math.min(1,p.alpha+.055*dt);
+
+    ctx.globalAlpha =
+      p.alpha*
+      (.78+.22*Math.sin(now*.004+p.phase))*
+      pulse;
+
+    ctx.shadowBlur = i%9===0 ? 11 : 0;
+
+    ctx.shadowColor = heartMode
+      ? "#ff4ca6"
+      : "#fff4e0";
+
+    ctx.fillStyle = heartMode
+      ? (
+          i%8===0
+            ? "#ffe0f0"
+            : i%3===0
+              ? "#ff9ccd"
+              : "#ff59ad"
+        )
+      : (
+          i%9===0
+            ? "#ffffff"
+            : "#fffbe6"
+        );
 
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
     ctx.fill();
   }
 
-  ctx.shadowBlur=0;
-  ctx.globalAlpha=1;
+  ctx.shadowBlur = 0;
+  ctx.globalAlpha = 1;
 }
 
 /* ==========================================
-   START ANIMATION
+   START ANIMATION + AUTO MUSIC
    ========================================== */
 
 function begin() {
+  // Start the uploaded song after the first click.
+  playLoveSong();
+
   intro.classList.add("hide");
   intro.setAttribute("aria-hidden","true");
 
-  active=true;
-  startTime=performance.now();
-  lastTime=startTime;
-  currentScene=-1;
-  particles=[];
-  heartMode=false;
+  active = true;
+
+  startTime = performance.now();
+  lastTime = startTime;
+
+  currentScene = -1;
+  particles = [];
+  heartMode = false;
 
   topline.classList.add("show");
+
   finalCenter.classList.remove("show");
   finalSubtitle.classList.remove("show");
   finalActions.classList.remove("show");
 
-  caption.textContent="";
+  caption.textContent = "";
   caption.classList.remove("show");
 }
 
@@ -1171,38 +1412,42 @@ function begin() {
    ========================================== */
 
 function frame(now) {
-  const dt=clamp((now-lastTime)/16.67,.1,2.5);
-  lastTime=now;
+  const dt = clamp((now-lastTime)/16.67,.1,2.5);
+  lastTime = now;
 
   drawMatrix(now,dt);
 
-  if(active) {
-    if(reducedMotion) {
-      if(currentScene<scenes.length-1) {
+  if (active) {
+    if (reducedMotion) {
+      if (currentScene < scenes.length-1) {
         setScene(scenes.length-1);
       }
 
       finalCenter.classList.add("show");
       finalSubtitle.classList.add("show");
       finalActions.classList.add("show");
-    } else {
-      const elapsed=(now-startTime)/1000;
-      let index=-1;
 
-      for(let i=0;i<scenes.length;i++) {
-        if(elapsed>=scenes[i].at)index=i;
+    } else {
+      const elapsed = (now-startTime)/1000;
+
+      let index = -1;
+
+      for (let i=0; i<scenes.length; i++) {
+        if (elapsed >= scenes[i].at) {
+          index = i;
+        }
       }
 
-      if(index>=0 && index!==currentScene) {
+      if (index>=0 && index!==currentScene) {
         setScene(index);
       }
 
-      if(elapsed>=18.3) {
+      if (elapsed >= 18.3) {
         finalCenter.classList.add("show");
         finalSubtitle.classList.add("show");
       }
 
-      if(elapsed>=20.1) {
+      if (elapsed >= 20.1) {
         finalActions.classList.add("show");
       }
     }
@@ -1217,23 +1462,32 @@ function frame(now) {
    ========================================== */
 
 function shower() {
-  const holder=document.getElementById("floatingHearts");
+  const holder = document.getElementById("floatingHearts");
+
   holder.replaceChildren();
 
-  for(let i=0;i<35;i++) {
-    const h=document.createElement("span");
+  for (let i=0; i<35; i++) {
+    const h = document.createElement("span");
 
-    h.textContent=i%4===0?"✦":"♥";
-    h.style.left=random(1,98)+"%";
-    h.style.fontSize=random(13,28)+"px";
-    h.style.setProperty("--d",random(4.5,8)+"s");
-    h.style.animationDelay=random(0,1.8)+"s";
+    h.textContent = i%4===0 ? "✦" : "♥";
+
+    h.style.left = random(1,98)+"%";
+    h.style.fontSize = random(13,28)+"px";
+
+    h.style.setProperty(
+      "--d",
+      random(4.5,8)+"s"
+    );
+
+    h.style.animationDelay = random(0,1.8)+"s";
 
     holder.append(h);
 
-    h.addEventListener("animationend",()=>{
-      h.remove();
-    },{once:true});
+    h.addEventListener(
+      "animationend",
+      () => h.remove(),
+      {once:true}
+    );
   }
 }
 
@@ -1243,16 +1497,27 @@ function shower() {
 
 function showLetter() {
   letterModal.classList.add("open");
-  letterModal.setAttribute("aria-hidden","false");
-  letterWrap.scrollTop=0;
+
+  letterModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  letterWrap.scrollTop = 0;
 
   shower();
+
   document.getElementById("closeLetter").focus();
 }
 
 function hideLetter() {
   letterModal.classList.remove("open");
-  letterModal.setAttribute("aria-hidden","true");
+
+  letterModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
   openLetterButton.focus();
 }
 
@@ -1260,8 +1525,11 @@ document.getElementById("startButton")
   .addEventListener("click",begin);
 
 document.getElementById("replayButton")
-  .addEventListener("click",()=>{
-    if(letterModal.classList.contains("open"))hideLetter();
+  .addEventListener("click",() => {
+    if (letterModal.classList.contains("open")) {
+      hideLetter();
+    }
+
     begin();
   });
 
@@ -1273,13 +1541,17 @@ document.getElementById("closeLetter")
 document.getElementById("closeLetterBottom")
   .addEventListener("click",hideLetter);
 
-letterModal.addEventListener("click",e=>{
-  if(e.target===letterModal)hideLetter();
+letterModal.addEventListener("click",e => {
+  if (e.target===letterModal) {
+    hideLetter();
+  }
 });
 
-window.addEventListener("keydown",e=>{
-  if(e.key==="Escape" &&
-     letterModal.classList.contains("open")) {
+window.addEventListener("keydown",e => {
+  if (
+    e.key==="Escape" &&
+    letterModal.classList.contains("open")
+  ) {
     hideLetter();
   }
 });
@@ -1289,128 +1561,61 @@ window.addEventListener("keydown",e=>{
    ========================================== */
 
 document.getElementById("copyLetter")
-  .addEventListener("click",async()=>{
+  .addEventListener("click",async () => {
 
-  const full=
+  const full =
     CONFIG.letter.join("\n\n")+
     "\n\nWith all my heart,\n"+
     CONFIG.yourName+" ♡";
 
-  const b=document.getElementById("copyLetter");
+  const b = document.getElementById("copyLetter");
 
   try {
-    if(navigator.clipboard?.writeText) {
+    if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(full);
     } else {
-      const input=document.createElement("textarea");
-      input.value=full;
-      input.style.position="fixed";
-      input.style.left="-9999px";
+      const input = document.createElement("textarea");
+
+      input.value = full;
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+
       document.body.append(input);
       input.select();
 
-      if(!document.execCommand("copy")) {
+      if (!document.execCommand("copy")) {
         throw Error("Copy failed");
       }
 
       input.remove();
     }
 
-    b.textContent="✓ Copied!";
+    b.textContent = "✓ Copied!";
+
   } catch {
-    b.textContent="Please select and copy the letter";
+    b.textContent = "Please select and copy the letter";
   }
 
-  setTimeout(()=>{
-    b.textContent="♡ Copy this letter";
+  setTimeout(() => {
+    b.textContent = "♡ Copy this letter";
   },2200);
-});
-
-/* ==========================================
-   ORIGINAL ROMANTIC MUSIC
-   ========================================== */
-
-let audio=null;
-let musicTimer=null;
-let musicOn=false;
-let noteIndex=0;
-
-const melody=[
-  392,440,523.25,659.25,
-  587.33,523.25,440,349.23
-];
-
-function playNote(freq) {
-  if(!audio)return;
-
-  const t=audio.currentTime;
-  const o=audio.createOscillator();
-  const g=audio.createGain();
-
-  o.type="sine";
-  o.frequency.setValueAtTime(freq,t);
-
-  g.gain.setValueAtTime(.0001,t);
-  g.gain.exponentialRampToValueAtTime(.035,t+.07);
-  g.gain.exponentialRampToValueAtTime(.0001,t+1);
-
-  o.connect(g);
-  g.connect(audio.destination);
-
-  o.start(t);
-  o.stop(t+1.02);
-}
-
-musicButton.addEventListener("click",async()=>{
-  if(musicOn) {
-    musicOn=false;
-    clearInterval(musicTimer);
-    musicTimer=null;
-
-    musicButton.textContent="♫ Music: Off";
-    musicButton.setAttribute("aria-pressed","false");
-
-    if(audio)await audio.suspend();
-    return;
-  }
-
-  const AudioCtor=
-    window.AudioContext||window.webkitAudioContext;
-
-  if(!AudioCtor) {
-    musicButton.textContent="Music unavailable";
-    return;
-  }
-
-  if(!audio)audio=new AudioCtor();
-
-  try {
-    await audio.resume();
-  } catch {
-    musicButton.textContent="Music unavailable";
-    return;
-  }
-
-  musicOn=true;
-  musicButton.textContent="♫ Music: On";
-  musicButton.setAttribute("aria-pressed","true");
-
-  playNote(melody[noteIndex++%melody.length]);
-
-  musicTimer=setInterval(()=>{
-    playNote(melody[noteIndex++%melody.length]);
-  },620);
 });
 
 /* ==========================================
    INITIALIZE WEBSITE
    ========================================== */
 
-window.addEventListener("resize",fitScreen,{passive:true});
+window.addEventListener(
+  "resize",
+  fitScreen,
+  {passive:true}
+);
 
 fitScreen();
+
 requestAnimationFrame(frame);
 
 </script>
 </body>
 </html>
+
